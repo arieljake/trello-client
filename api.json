@@ -1,0 +1,33 @@
+{
+  "boards.create": {
+    "name": "createBoard",
+    "method": "POST",
+    "url": "boards",
+    "params": [
+      {
+        "name": "name",
+        "example": "ABCDEFG",
+        "required": "Required",
+        "description": "Valid Values: a string with a length from 1 to 16384\n"
+      },
+      {
+        "name": "desc",
+        "example": "ABCDEFG",
+        "required": "Optional",
+        "description": "Valid Values: a string with a length from 0 to 16384\n"
+      },
+      {
+        "name": "idOrganization",
+        "example": "ABCDEFG",
+        "required": "Optional",
+        "description": "Valid Values: The id or name of the organization to add the board to.\n"
+      },
+      {
+        "name": "prefs_permissionLevel",
+        "example": "ABCDEFG",
+        "required": "Optional, default=private",
+        "description": "Valid Values: One of: 'org', 'private', 'public'\n"
+      }
+    ]
+  }
+}
