@@ -4,10 +4,16 @@
 
 ##### install
 
-``` 
-npm install trello-client --save
+```
+$ npm install trello-client --save
 ```
 
+
+##### compile
+
+```
+$ coffee -c -o lib src
+```
 
 
 ##### usage
@@ -26,7 +32,7 @@ trello.createBoard({name:'Bugs'}).then(function(board) { console.dir(board); })
 
 Clone this repo and create a file called `.env` in the root with the following:
 
-``` 
+```
 TRELLO_KEY=xxxx
 TRELLO_TOKEN=xxxx
 ```
@@ -35,8 +41,8 @@ TRELLO_TOKEN=xxxx
 
 ##### testing
 
-``` 
-npm test
+```
+$ npm test
 ```
 
 

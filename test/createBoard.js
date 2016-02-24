@@ -6,18 +6,40 @@
 
   token = process.env.TRELLO_TOKEN;
 
+  if (!key || !token) {
+    console.log('expecting process.env.TRELLO_KEY and process.env.TRELLO_TOKEN');
+    process.exit(1);
+  }
+
   Trello = require('../lib');
 
   client = Trello(key, token);
 
   client.createBoard({
-    name: 'test board'
-  }).then(function(result) {
-    console.log('done');
-    return console.dir(result);
+    name: 'Version 1'
+  }).then(function(board) {
+    var listParams;
+    console.log("created board " + board.name + " id: " + board.id + ", url: " + board.url);
+    listParams = {
+      name: 'Milestone 1',
+      idBoard: board.id
+    };
+    return client.createList(listParams).then(function(list) {
+      var cardParams;
+      console.log("created list " + list.name + " id: " + list.id + ", idBoard: " + list.idBoard);
+      cardParams = {
+        name: 'Server setup',
+        due: new Date(),
+        idList: list.id,
+        urlSource: null
+      };
+      return client.createCard(cardParams).then(function(card) {
+        return console.log("created card " + card.name + " id: " + card.id + ", idList: " + card.idList + ", due: " + card.due);
+      });
+    });
   })["catch"](function(err) {
     console.log('error');
-    return console.dir(err);
+    return console.dir(err.message);
   });
 
 }).call(this);

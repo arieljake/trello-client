@@ -1,33 +1,118 @@
 {
-  "boards.create": {
-    "name": "createBoard",
-    "method": "POST",
-    "url": "boards",
-    "params": [
-      {
-        "name": "name",
-        "example": "ABCDEFG",
-        "required": "Required",
-        "description": "Valid Values: a string with a length from 1 to 16384\n"
-      },
-      {
-        "name": "desc",
-        "example": "ABCDEFG",
-        "required": "Optional",
-        "description": "Valid Values: a string with a length from 0 to 16384\n"
-      },
-      {
-        "name": "idOrganization",
-        "example": "ABCDEFG",
-        "required": "Optional",
-        "description": "Valid Values: The id or name of the organization to add the board to.\n"
-      },
-      {
-        "name": "prefs_permissionLevel",
-        "example": "ABCDEFG",
-        "required": "Optional, default=private",
-        "description": "Valid Values: One of: 'org', 'private', 'public'\n"
-      }
-    ]
-  }
+	"boards.create": {
+		"name": "createBoard",
+		"method": "POST",
+		"url": "boards",
+		"params": [
+			{
+				"name": "name",
+				"required": "Required",
+				"description": "Valid Values: a string with a length from 1 to 16384\n"
+            },
+			{
+				"name": "desc",
+				"required": "Optional",
+				"description": "Valid Values: a string with a length from 0 to 16384\n"
+            },
+			{
+				"name": "idOrganization",
+				"required": "Optional",
+				"description": "Valid Values: The id or name of the organization to add the board to.\n"
+            },
+			{
+				"name": "prefs_permissionLevel",
+				"required": "Optional, default=private",
+				"description": "Valid Values: One of: 'org', 'private', 'public'\n"
+            }
+        ]
+	},
+	"lists.create": {
+		"name": "createList",
+		"method": "POST",
+		"url": "lists",
+		"params": [
+			{
+				"name": "name",
+				"required": "Required",
+				"description": "Valid Values: a string with a length from 1 to 16384"
+            },
+			{
+				"name": "idBoard",
+				"required": "Required",
+				"description": "Valid Values: id of the board that the list should be added to"
+            },
+			{
+				"name": "idListSource",
+				"required": "Optional",
+				"description": "Valid Values: The id of the list to copy into a new list."
+            },
+			{
+				"name": "pos",
+				"required": "Optional, default=top",
+				"description": "Valid Values: A position. top, bottom, or a positive number."
+            }
+        ]
+	},
+	"cards.create": {
+		"name": "createCard",
+		"method": "POST",
+		"url": "cards",
+		"params": [
+			{
+				"name": "name",
+				"required": "Optional",
+				"description": "Valid Values: The name of the new card. It isn't required if the name is being copied from provided by a URL, file or card that is being copied."
+            },
+			{
+				"name": "desc",
+				"required": "Optional",
+				"description": "Valid Values: a string with a length from 0 to 16384"
+            },
+			{
+				"name": "pos",
+				"required": "Optional, default=bottom",
+				"description": "Valid Values: A position. top, bottom, or a positive number."
+            },
+			{
+				"name": "due",
+				"required": "Required",
+				"description": "Valid Values: A date, or null"
+            },
+			{
+				"name": "idList",
+				"required": "Required",
+				"description": "Valid Values: id of the list that the card should be added to"
+            },
+			{
+				"name": "idMembers",
+				"required": "Optional",
+				"description": "Valid Values: A comma-separated list of objectIds, 24-character hex strings"
+            },
+			{
+				"name": "idLabels",
+				"required": "Optional",
+				"description": "Valid Values: A comma-separated list of objectIds, 24-character hex strings"
+            },
+			{
+				"name": "urlSource",
+				"required": "Required",
+				"description": "Valid Values: A URL starting with http:// or https:// or null"
+            },
+			{
+				"name": "fileSource",
+				"required": "Optional",
+				"description": "Valid Values: A file"
+            },
+			{
+				"name": "idCardSource",
+				"required": "Optional",
+				"description": "Valid Values: The id of the card to copy into a new card."
+            },
+			{
+				"name": "keepFromSource",
+				"required": "Optional, default=all",
+				"description": "Valid Values: Properties of the card to copy over from the source."
+            }
+        ]
+	}
 }

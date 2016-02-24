@@ -1,15 +1,8 @@
-path = require 'path'
-requireDirectory = require 'require-directory'
+transform = require 'lodash.transform'
 
 api = require '../api.json'
+exec = require './_exec'
 
-exclude = (filepath) ->
-  filename = path.basename filepath
-  return /^index\./.test(filename) or /^_/.test(filename) or /\.json$/.test(filename)
-
-renamer = (name) ->
-  return api[name].name
-
-module.exports = requireDirectory module,
-  exclude: exclude,
-  rename: renamer
+module.exports = transform api, (memo, apiDesc, apiId) ->
+    memo[apiDesc.name] = (params) ->
+        exec apiId, params
