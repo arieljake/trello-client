@@ -1,6 +1,6 @@
 {
     "name": "trello-client",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Trello API client",
     "main": "lib/index.js",
     "scripts": {

@@ -53,6 +53,38 @@
             }
         ]
     },
+    "lists.get": {
+        "name": "getLists",
+        "method": "GET",
+        "url": "boards/#idBoard#/lists",
+        "params": [
+            {
+                "name": "idBoard",
+                "required": "Required",
+                "description": "Valid Values: id of the board that the list should be added to"
+            },
+            {
+                "name": "cards",
+                "required": "Optional, default=none",
+                "description": "Valid Values: One of: all, closed, none, open, visible"
+            },
+            {
+                "name": "filter",
+                "required": "Optional, default=open",
+                "description": "Valid Values: One of: all, closed, none, open"
+            },
+            {
+                "name": "fields",
+                "required": "Optional, default=all",
+                "description": "Valid Values: all or a comma-separated list of: closed, idBoard, name, pos, subscribed"
+            },
+            {
+                "name": "card_fields",
+                "required": "Optional, default=all",
+                "description": "Valid Values: all or a comma-separated list of card fields"
+            }
+        ]
+    },
     "cards.create": {
         "name": "createCard",
         "method": "POST",

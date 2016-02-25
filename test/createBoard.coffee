@@ -38,6 +38,13 @@ client.createBoard name: 'Version 1'
               .then (checklist) ->
                 console.log "created checklist #{checklist.name} id: #{checklist.id}"
 
+                listQuery =
+                  idBoard: board.id
+
+                client.getLists listQuery
+                  .then (lists) ->
+                    console.log "have lists: #{ lists.map((l) -> l.name).join(', ') }"
+
   .catch (err) ->
     console.log 'error'
     console.dir err.message

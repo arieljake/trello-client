@@ -41,7 +41,16 @@
           idCard: card.id
         };
         return client.createChecklist(checklistParams).then(function(checklist) {
-          return console.log("created checklist " + checklist.name + " id: " + checklist.id);
+          var listQuery;
+          console.log("created checklist " + checklist.name + " id: " + checklist.id);
+          listQuery = {
+            idBoard: board.id
+          };
+          return client.getLists(listQuery).then(function(lists) {
+            return console.log("have lists: " + (lists.map(function(l) {
+              return l.name;
+            }).join(', ')));
+          });
         });
       });
     });
