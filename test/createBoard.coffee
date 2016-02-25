@@ -30,6 +30,14 @@ client.createBoard name: 'Version 1'
           .then (card) ->
             console.log "created card #{card.name} id: #{card.id}, idList: #{card.idList}, due: #{card.due}"
 
+            checklistParams =
+              name: 'Env vars'
+              idCard: card.id
+
+            client.createChecklist checklistParams
+              .then (checklist) ->
+                console.log "created checklist #{checklist.name} id: #{checklist.id}"
+
   .catch (err) ->
     console.log 'error'
     console.dir err.message

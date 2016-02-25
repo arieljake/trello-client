@@ -14,4 +14,4 @@ module.exports = new class VarString
   replace: (varString, values) ->
 
     return varString.replace varLocator, (m, i, t) ->
-      return context[m.replace varExtract, ""] or ""
+      return values[m.replace varExtract, ""] or ""

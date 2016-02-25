@@ -34,7 +34,15 @@
         urlSource: null
       };
       return client.createCard(cardParams).then(function(card) {
-        return console.log("created card " + card.name + " id: " + card.id + ", idList: " + card.idList + ", due: " + card.due);
+        var checklistParams;
+        console.log("created card " + card.name + " id: " + card.id + ", idList: " + card.idList + ", due: " + card.due);
+        checklistParams = {
+          name: 'Env vars',
+          idCard: card.id
+        };
+        return client.createChecklist(checklistParams).then(function(checklist) {
+          return console.log("created checklist " + checklist.name + " id: " + checklist.id);
+        });
       });
     });
   })["catch"](function(err) {

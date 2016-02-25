@@ -1,4 +1,3 @@
 {
-	"indent_size": 2,
-	"indent_char": " "
+  "indent-with-tabs": false
 }

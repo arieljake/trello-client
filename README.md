@@ -37,6 +37,7 @@ TRELLO_KEY=xxxx
 TRELLO_TOKEN=xxxx
 ```
 
+Developer keys can be obtained at `https://trello.com/app-key`
 
 
 ##### testing
@@ -52,3 +53,6 @@ $ npm test
 The entire Trello API will be supported someday :). All method signatures accept a `params` object and return an A+ Promise.
 
 - `trello.createBoard({name})`
+- `trello.createList({name, idBoard})`
+- `trello.createCard({name, due, idList})`
+- `trello.createChecklist({name, idCard})`
