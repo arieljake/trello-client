@@ -38,12 +38,21 @@ client.createBoard name: 'Version 1'
               .then (checklist) ->
                 console.log "created checklist #{checklist.name} id: #{checklist.id}"
 
-                listQuery =
-                  idBoard: board.id
+                itemParams =
+                  name: 'set NODE_ENV'
+                  checked: false
+                  idChecklist: checklist.id
 
-                client.getLists listQuery
-                  .then (lists) ->
-                    console.log "have lists: #{ lists.map((l) -> l.name).join(', ') }"
+                client.createCheckitem itemParams
+                  .then (checkitem) ->
+                    console.log "created checkitem #{checkitem.name} id: #{checkitem.id}"
+
+                    listQuery =
+                      idBoard: board.id
+
+                    client.getLists listQuery
+                      .then (lists) ->
+                        console.log "have lists: #{ lists.map((l) -> l.name).join(', ') }"
 
   .catch (err) ->
     console.log 'error'

@@ -41,15 +41,24 @@
           idCard: card.id
         };
         return client.createChecklist(checklistParams).then(function(checklist) {
-          var listQuery;
+          var itemParams;
           console.log("created checklist " + checklist.name + " id: " + checklist.id);
-          listQuery = {
-            idBoard: board.id
+          itemParams = {
+            name: 'set NODE_ENV',
+            checked: false,
+            idChecklist: checklist.id
           };
-          return client.getLists(listQuery).then(function(lists) {
-            return console.log("have lists: " + (lists.map(function(l) {
-              return l.name;
-            }).join(', ')));
+          return client.createCheckitem(itemParams).then(function(checkitem) {
+            var listQuery;
+            console.log("created checkitem " + checkitem.name + " id: " + checkitem.id);
+            listQuery = {
+              idBoard: board.id
+            };
+            return client.getLists(listQuery).then(function(lists) {
+              return console.log("have lists: " + (lists.map(function(l) {
+                return l.name;
+              }).join(', ')));
+            });
           });
         });
       });

@@ -173,5 +173,32 @@
                 "description": "Valid Values: The id of the source checklist to copy into a new checklist."
             }
         ]
+    },
+    "checkitems.create": {
+        "name": "createCheckitem",
+        "method": "POST",
+        "url": "checklists/#idChecklist#/checkItems",
+        "params": [
+            {
+                "name": "name",
+                "required": "Required",
+                "description": "Valid Values: a string with a length from 0 to 16384"
+            },
+            {
+                "name": "idChecklist",
+                "required": "Required",
+                "description": "Valid Values: id of the checklist that the item should be added to"
+            },
+            {
+                "name": "pos",
+                "required": "Optional, default=bottom",
+                "description": "Valid Values: A position. top, bottom, or a positive number."
+            },
+            {
+                "name": "checked",
+                "required": "Optional, default=false",
+                "description": "Valid Values: true or false"
+            }
+        ]
     }
 }
