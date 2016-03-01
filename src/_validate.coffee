@@ -13,7 +13,7 @@ module.exports = (method, params) ->
 
   # but have a plan for the worst
   if missing.length
-    bullets = missing.map (p) -> "- #{param.name} ... #{param.description}"
+    bullets = missing.map (param) -> "- #{param.name} ... #{param.description}"
     msg = "#{method} missing params:\n#{bullets.join('\n')}"
     err = new Error msg
 

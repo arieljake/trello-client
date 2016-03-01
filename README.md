@@ -52,7 +52,12 @@ $ npm test
 
 The entire Trello API will be supported someday :). All method signatures accept a `params` object and return an A+ Promise.
 
-- `trello.createBoard({name})`
-- `trello.createList({name, idBoard})`
-- `trello.createCard({name, due, idList})`
-- `trello.createChecklist({name, idCard})`
+- `trello.addMemberToBoard`
+- `trello.addMemberToOrg`
+- `trello.createBoard`
+- `trello.createCard`
+- `trello.createCheckitem`
+- `trello.createChecklist`
+- `trello.createList`
+- `trello.getLists`
+- `trello.getOrgBoards`
