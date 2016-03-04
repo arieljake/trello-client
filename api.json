@@ -53,6 +53,18 @@
             }
         ]
     },
+    "boards.members.get": {
+        "name": "getBoardMembers",
+        "method": "GET",
+        "url": "boards/#idBoard#/members",
+        "params": [
+            {
+                "name": "idBoard",
+                "required": "Required",
+                "description": "Valid Values: id of the board to retrieve the members for"
+            }
+        ]
+    },
     "cards.create": {
         "name": "createCard",
         "method": "POST",
