@@ -7,22 +7,139 @@
             {
                 "name": "name",
                 "required": "Required",
-                "description": "Valid Values: a string with a length from 1 to 16384\n"
+                "description": "Valid Values: a string with a length from 1 to 16384"
             },
             {
                 "name": "desc",
                 "required": "Optional",
-                "description": "Valid Values: a string with a length from 0 to 16384\n"
+                "description": "Valid Values: a string with a length from 0 to 16384"
             },
             {
                 "name": "idOrganization",
                 "required": "Optional",
-                "description": "Valid Values: The id or name of the organization to add the board to.\n"
+                "description": "Valid Values: The id or name of the organization to add the board to."
             },
             {
                 "name": "prefs_permissionLevel",
                 "required": "Optional, default=private",
-                "description": "Valid Values: One of: 'org', 'private', 'public'\n"
+                "description": "Valid Values: One of: 'org', 'private', 'public'"
+            }
+        ]
+    },
+    "boards.get": {
+        "name": "getBoard",
+        "method": "GET",
+        "url": "boards/#idBoard#",
+        "params": [
+            {
+                "name": "idBoard",
+                "required": "Required",
+                "description": "Valid Values: id of the board that the member should be added to"
+            },
+            {
+                "name": "actions",
+                "required": "Optional",
+                "description": "Valid Values: 'all' or a comma-separated list from https://developers.trello.com/advanced-reference/board#get-1-boards-board-id"
+            },
+            {
+                "name": "actions_entities",
+                "required": "Optional, default=false",
+                "description": "Valid Values: true or false"
+            },
+            {
+                "name": "actions_display",
+                "required": "Optional, default=false",
+                "description": "Valid Values: true or false"
+            },
+            {
+                "name": "actions_format",
+                "required": "Optional, default=list",
+                "description": "Valid Values: count, list, or minimal"
+            },
+            {
+                "name": "actions_since",
+                "required": "Optional",
+                "description": "Valid Values: A date, null or lastView"
+            },
+            {
+                "name": "actions_limit",
+                "required": "Optional, default=50",
+                "description": "Valid Values: a number from 0 to 1000"
+            },
+            {
+                "name": "action_fields",
+                "required": "Optional, default=all",
+                "description": "Valid Values: all or a comma-separated list of: data, date, idMemberCreator, or type"
+            },
+            {
+                "name": "cards",
+                "required": "Optional, default=none",
+                "description": "Valid Values: one of all, closed, none, open, visible"
+            },
+            {
+                "name": "card_fields",
+                "required": "Optional, default=all",
+                "description": "Valid Values: all or a comma-separated list from https://developers.trello.com/advanced-reference/board#get-1-boards-board-id"
+            },
+            {
+                "name": "card_checklists",
+                "required": "Optional, default=none",
+                "description": "Valid Values: all or none"
+            },
+            {
+                "name": "labels",
+                "required": "Optional, default=none",
+                "description": "Valid Values: all or none"
+            },
+            {
+                "name": "label_fields",
+                "required": "Optional, default=all",
+                "description": "Valid Values: all or a comma-separated list of: color, idBoard, name, uses"
+            },
+            {
+                "name": "labels_limit",
+                "required": "Optional, default=50",
+                "description": "Valid Values: a number from 0 to 1000"
+            },
+            {
+                "name": "lists",
+                "required": "Optional, default=none",
+                "description": "Valid Values: all, closed, none or open"
+            },
+            {
+                "name": "list_fields",
+                "required": "Optional, default=all",
+                "description": "Valid Values: all or a comma-separated list of: closed, idBoard, name, pos, subscribed"
+            },
+            {
+                "name": "memberships",
+                "required": "Optional, default=none",
+                "description": "Valid Values: all or a comma-separated list of: active, admin, deactivated, me, normal"
+            },
+            {
+                "name": "memberships_member",
+                "required": "Optional, default=false",
+                "description": "Valid Values: true or false"
+            },
+            {
+                "name": "members",
+                "required": "Optional, default=none",
+                "description": "Valid Values: One of: admins, all, none, normal, owners"
+            },
+            {
+                "name": "checklists",
+                "required": "Optional, default=none",
+                "description": "Valid Values: One of: all or none"
+            },
+            {
+                "name": "checklist_fields",
+                "required": "Optional, default=all",
+                "description": "Valid Values: all or a comma-separated list of: idBoard, idCard, name, pos"
+            },
+            {
+                "name": "organization",
+                "required": "Optional, default=false",
+                "description": "Valid Values: true or false"
             }
         ]
     },

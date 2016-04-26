@@ -53,6 +53,16 @@ client.createBoard name: 'Version 1'
                     client.getLists listQuery
                       .then (lists) ->
                         console.log "have lists: #{ lists.map((l) -> l.name).join(', ') }"
+    .then ->
+      params =
+        idBoard: board.id
+        lists: 'all'
+        cards: 'all'
+        checklists: 'all'
+
+      client.getBoard params
+        .then (board) ->
+          console.dir board
 
   .catch (err) ->
     console.log 'error'

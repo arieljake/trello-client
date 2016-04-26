@@ -62,6 +62,17 @@
           });
         });
       });
+    }).then(function() {
+      var params;
+      params = {
+        idBoard: board.id,
+        lists: 'all',
+        cards: 'all',
+        checklists: 'all'
+      };
+      return client.getBoard(params).then(function(board) {
+        return console.dir(board);
+      });
     });
   })["catch"](function(err) {
     console.log('error');

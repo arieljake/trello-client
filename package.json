@@ -1,10 +1,10 @@
 {
     "name": "trello-client",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "description": "Trello API client",
     "main": "lib/index.js",
     "scripts": {
-        "test": "node test/createBoard.js"
+        "test": "coffee --compile --output test/ test/*.coffee; node test/createBoard.js"
     },
     "repository": {
         "type": "git",
