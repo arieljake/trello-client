@@ -1,5 +1,6 @@
 {
-    "boards.create": {
+    "boards.create":
+    {
         "name": "createBoard",
         "method": "POST",
         "url": "boards",
@@ -26,7 +27,8 @@
             }
         ]
     },
-    "boards.get": {
+    "boards.get":
+    {
         "name": "getBoard",
         "method": "GET",
         "url": "boards/#idBoard#",
@@ -143,7 +145,8 @@
             }
         ]
     },
-    "boards.members.add": {
+    "boards.members.add":
+    {
         "name": "addMemberToBoard",
         "method": "PUT",
         "url": "boards/#idBoard#/members",
@@ -170,7 +173,8 @@
             }
         ]
     },
-    "boards.members.get": {
+    "boards.members.get":
+    {
         "name": "getBoardMembers",
         "method": "GET",
         "url": "boards/#idBoard#/members",
@@ -182,7 +186,8 @@
             }
         ]
     },
-    "cards.create": {
+    "cards.create":
+    {
         "name": "createCard",
         "method": "POST",
         "url": "cards",
@@ -244,7 +249,8 @@
             }
         ]
     },
-    "checkitems.create": {
+    "checkitems.create":
+    {
         "name": "createCheckitem",
         "method": "POST",
         "url": "checklists/#idChecklist#/checkItems",
@@ -271,7 +277,8 @@
             }
         ]
     },
-    "checklists.create": {
+    "checklists.create":
+    {
         "name": "createChecklist",
         "method": "POST",
         "url": "checklists",
@@ -298,7 +305,8 @@
             }
         ]
     },
-    "lists.create": {
+    "lists.create":
+    {
         "name": "createList",
         "method": "POST",
         "url": "boards/#idBoard#/lists",
@@ -325,7 +333,8 @@
             }
         ]
     },
-    "lists.get": {
+    "lists.get":
+    {
         "name": "getLists",
         "method": "GET",
         "url": "boards/#idBoard#/lists",
@@ -357,7 +366,21 @@
             }
         ]
     },
-    "organizations.boards.get": {
+    "members.organizations.get":
+    {
+        "name": "getMemberOrgs",
+        "method": "GET",
+        "url": "members/#idMember#/organizations",
+        "params": [
+            {
+                "name": "idMember",
+                "required": "Required",
+                "description": "Valid Values: id or username or 'me' of the member to retrieve the orgs for"
+            }
+        ]
+    },
+    "organizations.boards.get":
+    {
         "name": "getOrgBoards",
         "method": "GET",
         "url": "organizations/#idOrg#/boards",
@@ -369,7 +392,8 @@
             }
         ]
     },
-    "organizations.members.add": {
+    "organizations.members.add":
+    {
         "name": "addMemberToOrg",
         "method": "PUT",
         "url": "organizations/#idOrg#/members",
@@ -396,7 +420,28 @@
             }
         ]
     },
-    "webhooks.create": {
+    "tokens.webhooks.get":
+    {
+        "name": "getTokenWebhooks",
+        "method": "GET",
+        "url": "tokens/#token#/webhooks",
+        "params": []
+    },
+    "tokens.webhooks.delete":
+    {
+        "name": "deleteTokenWebhook",
+        "method": "DELETE",
+        "url": "tokens/#token#/webhooks/#idWebhook#",
+        "params": [
+            {
+                "name": "idWebhook",
+                "required": "Required",
+                "description": "Valid Values: id of the webhook that should be deleted"
+            }
+        ]
+    },
+    "webhooks.create":
+    {
         "name": "createWebhook",
         "method": "POST",
         "url": "webhooks",

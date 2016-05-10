@@ -1,3 +1,5 @@
 {
-  "indent-with-tabs": false
+  "indent-with-tabs": false,
+  "brace_style": "expand",
+  "keep_array_indentation": true
 }

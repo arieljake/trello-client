@@ -1,6 +1,6 @@
 {
     "name": "trello-client",
-    "version": "1.0.8",
+    "version": "1.0.10",
     "description": "Trello API client",
     "main": "lib/index.js",
     "scripts": {
@@ -11,12 +11,12 @@
         "url": "git+https://github.com/arieljake/trello-client.git"
     },
     "keywords": [
-    "trello",
-    "api",
-    "client",
-    "javascript",
-    "coffeescript"
-  ],
+        "trello",
+        "api",
+        "client",
+        "javascript",
+        "coffeescript"
+    ],
     "author": "Ariel Jakobovits",
     "license": "Apache-2.0",
     "bugs": {
