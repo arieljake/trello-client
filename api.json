@@ -420,6 +420,114 @@
             }
         ]
     },
+    "search.search":
+    {
+        "name": "search",
+        "method": "GET",
+        "url": "search",
+        "params": [
+            {
+                "name": "query",
+                "required": "Required",
+                "description": "Valid values: a string with a length from 1 to 16384"
+            },
+            {
+                "name": "idBoards",
+                "required": "Optional, default=mine",
+                "description": "Valid values: a comma-separated list of objectIds, 24-character hex strings"
+            },
+            {
+                "name": "idOrganizations",
+                "required": "Optional",
+                "description": "Valid values: a comma-separated list of objectIds, 24-character hex strings"
+            },
+            {
+                "name": "idCards",
+                "required": "Optional",
+                "description": "Valid values: a comma-separated list of objectIds, 24-character hex strings"
+            },
+            {
+                "name": "modelTypes",
+                "required": "Optional, default=all",
+                "description": "Valid values: all or a comma-separated list of: actions, boards, cards, members, organizations"
+            },
+            {
+                "name": "board_fields",
+                "required": "Optional, default=name,idOrganization",
+                "description": "Valid values: all or a comma-separated list of: closed, dateLastActivity, dateLastView, desc, descData, idOrganization, invitations, invited, labelNames, memberships, name, pinned, powerUps, prefs, shortLink, shortUrl, starred, subscribed, url"
+            },
+            {
+                "name": "boards_limit",
+                "required": "Optional, default=10",
+                "description": "Valid values: a number from 1 to 1000"
+            },
+            {
+                "name": "card_fields",
+                "required": "Optional, default=all",
+                "description": "Valid values: all or a comma-separated list of: badges, checkItemStates, closed, dateLastActivity, desc, descData, due, email, idAttachmentCover, idBoard, idChecklists, idLabels, idList, idMembers, idMembersVoted, idShort, labels, manualCoverAttachment, name, pos, shortLink, shortUrl, subscribed, url"
+            },
+            {
+                "name": "cards_limit",
+                "required": "Optional, default=10",
+                "description": "Valid values: a number from 1 to 1000"
+            },
+            {
+                "name": "cards_page",
+                "required": "Optional, default=0",
+                "description": "Valid values: a number from 0 to 100"
+            },
+            {
+                "name": "card_board",
+                "required": "Optional, default=false",
+                "description": "Valid values: true, false"
+            },
+            {
+                "name": "card_list",
+                "required": "Optional, default=false",
+                "description": "Valid values: true, false"
+            },
+            {
+                "name": "card_members",
+                "required": "Optional, default=false",
+                "description": "Valid values: true, false"
+            },
+            {
+                "name": "card_stickers",
+                "required": "Optional, default=false",
+                "description": "Valid values: true, false"
+            },
+            {
+                "name": "card_attachments",
+                "required": "Optional, default=false",
+                "description": "Valid values: a boolean value or \"cover\" for only card cover attachments"
+            },
+            {
+                "name": "organization_fields",
+                "required": "Optional, default=name,displayName",
+                "description": "Valid values: all or a comma-separated list of: billableMemberCount, desc, descData, displayName, idBoards, invitations, invited, logoHash, memberships, name, powerUps, prefs, premiumFeatures, products, url, website"
+            },
+            {
+                "name": "organizations_limit",
+                "required": "Optional, default=10",
+                "description": "Valid values: a number from 1 to 1000"
+            },
+            {
+                "name": "member_fields",
+                "required": "Optional, default=avatarHash,fullName,initials,username,confirmed",
+                "description": "Valid values: all or a comma-separated list of: avatarHash, bio, bioData, confirmed, fullName, idPremOrgsAdmin, initials, memberType, products, status, url, username"
+            },
+            {
+                "name": "members_limit",
+                "required": "Optional, default=10",
+                "description": "Valid values: a number from 1 to 1000"
+            },
+            {
+                "name": "partial",
+                "required": "Optional, default=false",
+                "description": "Valid values: true, false"
+            }
+        ]
+    },
     "tokens.webhooks.get":
     {
         "name": "getTokenWebhooks",
