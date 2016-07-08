@@ -50,7 +50,9 @@ $ npm test
 
 ## Trello api
 
-The entire Trello API will be supported someday :). All method signatures accept a `params` object and return an A+ Promise.
+The entire Trello API will be supported someday :).
+Adding methods is as simple as updating the api.json file in the root directory.
+All method signatures accept a `params` object and return an A+ Promise.
 
 - `trello.addMemberToBoard`
 - `trello.addMemberToOrg`
@@ -59,5 +61,12 @@ The entire Trello API will be supported someday :). All method signatures accept
 - `trello.createCheckitem`
 - `trello.createChecklist`
 - `trello.createList`
-- `trello.getLists`
+- `trello.createWebhook`
+- `trello.deleteTokenWebhook`
+- `trello.getBoard`
+- `trello.getBoardMembers`
+- `trello.getLists` (for a board)
+- `trello.getMemberOrgs`
 - `trello.getOrgBoards`
+- `trello.getTokenWebhooks`
+- `trello.search` (account-wide)
