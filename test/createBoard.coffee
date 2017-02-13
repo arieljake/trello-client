@@ -53,6 +53,10 @@ client.createBoard name: 'Version 1'
                     client.getLists listQuery
                       .then (lists) ->
                         console.log "have lists: #{ lists.map((l) -> l.name).join(', ') }"
+
+                        client.getTokenWebhooks()
+                          .then (hooks) ->
+                            console.log "have webhooks: #{ hooks.map((l) -> l.name).join(', ') }"
     .then ->
       params =
         idBoard: board.id

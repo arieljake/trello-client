@@ -55,9 +55,14 @@
               idBoard: board.id
             };
             return client.getLists(listQuery).then(function(lists) {
-              return console.log("have lists: " + (lists.map(function(l) {
+              console.log("have lists: " + (lists.map(function(l) {
                 return l.name;
               }).join(', ')));
+              return client.getTokenWebhooks().then(function(hooks) {
+                return console.log("have webhooks: " + (hooks.map(function(l) {
+                  return l.name;
+                }).join(', ')));
+              });
             });
           });
         });

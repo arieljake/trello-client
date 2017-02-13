@@ -17,6 +17,9 @@ module.exports = (ns, values) ->
 
   if err then return Promise.reject err
 
+  key = values.key
+  token = values.token
+
   options =
     method: api[ns].method
     uri: varString.replace api[ns].url, values
@@ -30,6 +33,6 @@ module.exports = (ns, values) ->
       options.uri += "&"
     else
       options.uri += "?"
-    options.uri += "key=" + options.body.key + "&token=" + options.body.token
+    options.uri += "key=" + key + "&token=" + token
 
   req options
