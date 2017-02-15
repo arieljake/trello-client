@@ -17,12 +17,18 @@ module.exports = (ns, values) ->
 
   if err then return Promise.reject err
 
+  key = values.key
+  token = values.token
+
   options =
     method: api[ns].method
     uri: varString.replace api[ns].url, values
     body: values
 
-  varString.getVars(api[ns].url).forEach (varName) ->
-    delete options.body[varName]
+  if api[ns].method == 'GET'
+    options.qs = values
+  else
+    varString.getVars(api[ns].url).forEach (varName) ->
+      delete options.body[varName]
 
   req options
