@@ -6,6 +6,8 @@ if not key or not token
   process.exit 1
 
 Trello = require '../lib'
+request = require 'request'
+diff = require('deep-diff').diff
 client = Trello key, token
 
 client.createBoard name: 'Version 1'
@@ -60,13 +62,32 @@ client.createBoard name: 'Version 1'
     .then ->
       params =
         idBoard: board.id
-        lists: 'all'
+        actions: 'all'
         cards: 'all'
         checklists: 'all'
+        lists: 'all'
+        labels: 'all'
+        members: 'all'
 
       client.getBoard params
         .then (board) ->
-          console.dir board
+          # console.log "Board via trello-client\n"
+          # console.log JSON.stringify(board)
+          url = "https://api.trello.com/1/boards/#{board.id}?key=#{key}&token=#{token}&actions=all&cards=all&checklists=all&lists=all&labels=all&members=all"
+          new Promise (resolve, reject) =>
+            request url, (error, response, body) =>
+              if not error
+                bodyObject = JSON.parse body
+                # console.log "Board via request\n"
+                # console.log(JSON.stringify(bodyObject))
+                differences = diff(board, bodyObject)
+                console.log "Differences between normal request and client (undefined is good):"
+                console.log differences
+                resolve bodyObject
+              else
+                console.log "Error with request"
+                console.log error
+                reject error
 
   .catch (err) ->
     console.log 'error'

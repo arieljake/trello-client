@@ -1,36 +1,38 @@
 {
-    "name": "trello-client",
-    "version": "1.0.12",
-    "description": "Trello API client",
-    "main": "lib/index.js",
-    "scripts": {
-        "test": "coffee --compile --output test/ test/*.coffee; node test/createBoard.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/arieljake/trello-client.git"
-    },
-    "keywords": [
-        "trello",
-        "api",
-        "client",
-        "javascript",
-        "coffeescript"
-    ],
-    "author": "Ariel Jakobovits",
-    "license": "Apache-2.0",
-    "bugs": {
-        "url": "https://github.com/arieljake/trello-client/issues"
-    },
-    "homepage": "https://github.com/arieljake/trello-client#readme",
-    "dependencies": {
-        "bluebird": "^3.3.1",
-        "lodash.map": "^4.2.0",
-        "lodash.transform": "^4.2.0",
-        "request-promise": "^2.0.1",
-        "require-directory": "^2.1.1"
-    },
-    "devDependencies": {
-        "coffee-script": "^1.10.0"
-    }
+  "name": "trello-client",
+  "version": "1.0.12",
+  "description": "Trello API client",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "coffee --compile --output test/ test/*.coffee; node test/createBoard.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arieljake/trello-client.git"
+  },
+  "keywords": [
+    "trello",
+    "api",
+    "client",
+    "javascript",
+    "coffeescript"
+  ],
+  "author": "Ariel Jakobovits",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/arieljake/trello-client/issues"
+  },
+  "homepage": "https://github.com/arieljake/trello-client#readme",
+  "dependencies": {
+    "bluebird": "^3.3.1",
+    "lodash.map": "^4.2.0",
+    "lodash.transform": "^4.2.0",
+    "request-promise": "^2.0.1",
+    "require-directory": "^2.1.1"
+  },
+  "devDependencies": {
+    "coffee-script": "1.10.0",
+    "deep-diff": "0.3.4",
+    "request": "2.79.0"
+  }
 }

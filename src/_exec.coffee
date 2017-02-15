@@ -29,10 +29,8 @@ module.exports = (ns, values) ->
     delete options.body[varName]
 
   if api[ns].method == 'GET'
-    if options.uri.indexOf('?') > -1
-      options.uri += "&"
-    else
-      options.uri += "?"
-    options.uri += "key=" + key + "&token=" + token
+    options.qs = values
+    options.qs.key = key
+    options.qs.token = token
 
   req options
