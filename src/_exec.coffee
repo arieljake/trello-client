@@ -25,12 +25,10 @@ module.exports = (ns, values) ->
     uri: varString.replace api[ns].url, values
     body: values
 
-  varString.getVars(api[ns].url).forEach (varName) ->
-    delete options.body[varName]
-
   if api[ns].method == 'GET'
     options.qs = values
-    options.qs.key = key
-    options.qs.token = token
+  else
+    varString.getVars(api[ns].url).forEach (varName) ->
+      delete options.body[varName]
 
   req options
